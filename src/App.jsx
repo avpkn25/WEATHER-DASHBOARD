@@ -32,24 +32,21 @@ function App() {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white">
             Weather Dashboard
           </h1>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setUnit(unit === 'celsius' ? 'fahrenheit' : 'celsius')}
-              className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
-            >
-              °{unit === 'celsius' ? 'C' : 'F'}
-            </button>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
-            >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+          <div className='flex gap-6 text-xl'>
+            <a href='https://avpkn.vercel.app/' target='_black' >About</a>
+            <a href='mailto:praveenkumarnaidu88@gmail.com?%20subject=Contact%20to%20Praveen!' target='_black' >Contact</a>
           </div>
         </div>
         
-        <div className="mb-8">
-          <SearchBar />
+        <div className="mb-8 flex items-center gap-4">
+        <SearchBar />
+        <button
+          onClick={() => setUnit(unit === 'celsius' ? 'fahrenheit' : 'celsius')}
+          className="px-5 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-600 transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
+        >
+          °{unit === 'celsius' ? 'C' : 'F'}
+        </button>
+          
         </div>
         
         <div className="space-y-6">
@@ -58,7 +55,16 @@ function App() {
           <WeeklyForecast />
         </div>
       </div>
+      <button
+        onClick={toggleDarkMode}
+        className="fixed bottom-4 right-4 p-4 rounded-lg bg-gray-700 dark:bg-[#9ca3af]
+                  text-gray-200 dark:text-[#ffd734] hover:bg-gray-400 dark:hover:bg-[#bb8f34]
+                  transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 z-50"
+      >
+        {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+      </button>
     </div>
+    
   );
 }
 
