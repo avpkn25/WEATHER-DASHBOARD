@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-#files
-src/store/weatherStore.js
