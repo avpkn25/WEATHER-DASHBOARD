@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800 min-h-screen;
+  }
+}
+
+@layer components {
+  .weather-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-lg dark:bg-gray-800/80 dark:text-white transition-all duration-300;
+  }
+  
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md rounded-lg shadow-lg dark:bg-gray-800/70;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
